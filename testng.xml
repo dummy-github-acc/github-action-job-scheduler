@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Dummy Tests">
+    <test name="Google Home Page Test">
+        <classes>
+            <class name="testng.GoogleTestCase"/>
+        </classes>
+    </test>
+</suite>
