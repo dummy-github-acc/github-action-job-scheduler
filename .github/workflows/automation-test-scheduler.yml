@@ -37,14 +37,7 @@ jobs:
         run: mvn clean
 
       - name: Install Dependencies
-        run: mvn install -DskipTests -U
+        run: mvn install -DskipTests
 
       - name: Run Tests
         run: mvn test
-
-      - name: Archive Test Results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: target/surefire-reports
