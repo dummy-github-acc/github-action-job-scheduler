@@ -25,11 +25,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
@@ -46,3 +41,10 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+
+      - name: Archive Test Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: target/surefire-reports
