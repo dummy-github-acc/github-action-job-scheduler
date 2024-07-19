@@ -9,20 +9,12 @@ import org.testng.annotations.*;
 public class GoogleTestCase {
     WebDriver driver;
 
-    @BeforeMethod
-    public void setup() {
+    @Test
+    public void googleHomePageTestCase() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-    }
-
-    @Test
-    public void googleHomePageTestCase() {
         driver.get("https://www.google.com/");
-    }
-
-    @AfterMethod
-    public void teardown(){
         driver.quit();
     }
 }
